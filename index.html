@@ -107,8 +107,6 @@
             bottom: 0;
             overflow: scroll;
             border-radius: 10px 10px 0 0;
-            padding: 0;
-            list-style-type: none;
         }
 
         /*This is the container for the ToDo list elements*/
@@ -120,7 +118,6 @@
             padding: 10px;
             background: linear-gradient(to right, rgb(241, 41, 68), rgb(255, 0, 106), hotpink);
             border-radius: 10px;
-            list-style: none;
         }
 
         /*This is the basic design applied to the container of details in a ToDo list element*/
@@ -326,10 +323,25 @@
         }
 
         /*Button to exit the form in case it is opened by mistake by the user*/
+        
+.calendar{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    z-index: 6;
+    margin: auto;
+    right: 18px;
+}
+.calendar img{
+    height: 30px;
+    position: absolute;
+}/*Link to an external web page design*/
     </style>
 </head>
 
 <body>
+    <a class="calendar" href="https://code.sololearn.com/W1ynTlCObiLS/?ref=app" target="_blank"><img
+            src="https://www.freeiconspng.com/uploads/calendar-image-png-15.png"></a>
     <div class="preloader">
         <img src="https://www.any.do/v4/images/og-image.png" class="logo">
         <img src="https://flevix.com/wp-content/uploads/2019/07/Line-Preloader.gif" class="loader">
@@ -362,7 +374,7 @@
         </table>
     </div>
 
-    <ol class="todolist"></ol>
+    <div class="todolist"></div>
     <div class="form">
         <img src="https://static.thenounproject.com/png/236306-200.png" class="exitForm" onclick="closeForm()">
         <h1 class="AddItem">Add Item</h1>
@@ -424,7 +436,7 @@
 
         function formListItem() {
             for (var i = 0; i < itemsTitles.length; i++) {
-                document.querySelector(".todolist").innerHTML += "<li class='li1'><div class='title'>" + itemsTitles[i] + "</div><div class='time'>" + itemsTime[i] + "</div><br><marquee class='desc'>" + itemsDesc[i] + "</marquee><img onclick='deleteItem(" + i + ")' src=\"https://static.thenounproject.com/png/236306-200.png\" class=\"del\"><img class='tick' src='https://image.flaticon.com/icons/png/512/60/60727.png' onclick='strike(" + i + ")' style='position: relative;height: 23px;bottom: 60px;filter:invert(1);left:0;'></li><br>";
+                document.querySelector(".todolist").innerHTML += "<div class='li1'><div class='title'>" + itemsTitles[i] + "</div><div class='time'>" + itemsTime[i] + "</div><br><marquee class='desc'>" + itemsDesc[i] + "</marquee><img onclick='deleteItem(" + i + ")' src=\"https://static.thenounproject.com/png/236306-200.png\" class=\"del\"><img class='tick' src='https://image.flaticon.com/icons/png/512/60/60727.png' onclick='strike(" + i + ")' style='position: relative;height: 23px;bottom: 60px;filter:invert(1);left:0;'></div><br>";
             }
         }//forms the list item by basic html and designed using CSS above.
 
