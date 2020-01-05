@@ -436,7 +436,7 @@
 
         function formListItem() {
             for (var i = 0; i < itemsTitles.length; i++) {
-                document.querySelector(".todolist").innerHTML += "<div class='li1'><div class='title'>" + itemsTitles[i] + "</div><div class='time'>" + itemsTime[i] + "</div><br><marquee class='desc'>" + itemsDesc[i] + "</marquee><img onclick='deleteItem(" + i + ")' src=\"https://static.thenounproject.com/png/236306-200.png\" class=\"del\"><img class='tick' src='https://image.flaticon.com/icons/png/512/60/60727.png' onclick='strike(" + i + ")' style='position: relative;height: 23px;bottom: 60px;filter:invert(1);left:0;'></div><br>";
+                document.querySelector(".todolist").innerHTML += "<div class='li1'><div class='title'>" + itemsTitles[i] + "</div><div class='time'>" + itemsTime[i] + "</div><br><marquee class='desc'>" + itemsDesc[i] + "</marquee><img onclick='deleteItem(" + i + ")' src=\"https://static.thenounproject.com/png/236306-200.png\" class=\"del\"><img class='tick' src='https://image.flaticon.com/icons/png/512/60/60727.png' onclick='strike(" + i + ")' style='position: relative;height: 23px;bottom: 60px;filter:invert(1);left:10px;'></div><br>";
             }
         }//forms the list item by basic html and designed using CSS above.
 
