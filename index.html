@@ -323,19 +323,35 @@
         }
 
         /*Button to exit the form in case it is opened by mistake by the user*/
-        
-.calendar{
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    z-index: 6;
-    margin: auto;
-    right: 18px;
-}
-.calendar img{
-    height: 30px;
-    position: absolute;
-}/*Link to an external web page design*/
+
+        .calendar {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            z-index: 6;
+            margin: auto;
+            right: 18px;
+        }
+
+        .calendar img {
+            height: 30px;
+            position: absolute;
+        }
+
+        /*Link to an external web page design*/
+
+        ul {
+            padding: 0;
+            list-style-type: none;
+        }
+
+        /*To removie the list indentation*/
+
+        li {
+            list-style: none;
+        }
+
+        /*To remove the bullets*/
     </style>
 </head>
 
@@ -374,7 +390,32 @@
         </table>
     </div>
 
-    <div class="todolist"></div>
+    <ul class="todolist">
+        <li class="li1">
+            <div class="title">Have a haircut</div>
+            <div class="time">At 1:39 a.m.</div><br>
+            <marquee class="desc">Get a new haircut to allow myself to enter my school</marquee><img
+                onclick="deleteItem(0)" src="https://static.thenounproject.com/png/236306-200.png" class="del"><img
+                class="tick" src="https://image.flaticon.com/icons/png/512/60/60727.png" onclick="strike(0)"
+                style="position: relative;height: 23px;bottom: 60px;filter:invert(1);left:10px;">
+        </li><br>
+        <li class="li1">
+            <div class="title">Get Eggs</div>
+            <div class="time">At 11:00 a.m.</div><br>
+            <marquee class="desc">Get Eggs for breakfast</marquee><img onclick="deleteItem(1)"
+                src="https://static.thenounproject.com/png/236306-200.png" class="del"><img class="tick"
+                src="https://image.flaticon.com/icons/png/512/60/60727.png" onclick="strike(1)"
+                style="position: relative;height: 23px;bottom: 60px;filter:invert(1);left:10px;">
+        </li><br>
+        <li class="li1">
+            <div class="title">Watch Hotel Mumbai</div>
+            <div class="time">At 8:00 p.m.</div><br>
+            <marquee class="desc">Watch the movie Hotel Mumbai, A movie based on true events that took place in India.
+            </marquee><img onclick="deleteItem(2)" src="https://static.thenounproject.com/png/236306-200.png"
+                class="del"><img class="tick" src="https://image.flaticon.com/icons/png/512/60/60727.png"
+                onclick="strike(2)" style="position: relative;height: 23px;bottom: 60px;filter:invert(1);left:10px;">
+        </li><br>
+    </ul>
     <div class="form">
         <img src="https://static.thenounproject.com/png/236306-200.png" class="exitForm" onclick="closeForm()">
         <h1 class="AddItem">Add Item</h1>
@@ -390,7 +431,6 @@
     <script>
         var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];//Array to store the names of the days of week and months
         window.onload = function () { //function that executes the app and makes it ready to use by halting for the images to load.
-            formListItem();//function that shows up all the example todo list items in order
             document.querySelector(".form").style.transform = 'translateY(-100%)';//removes form and moves it to the top, hence making it out of sight.
             document.querySelector(".preloader").style.transform = 'translateY(-100%)';//removes the preloader page after the app is ready for use.
             var date = new Date();//Date object to get basic date data
@@ -436,7 +476,7 @@
 
         function formListItem() {
             for (var i = 0; i < itemsTitles.length; i++) {
-                document.querySelector(".todolist").innerHTML += "<div class='li1'><div class='title'>" + itemsTitles[i] + "</div><div class='time'>" + itemsTime[i] + "</div><br><marquee class='desc'>" + itemsDesc[i] + "</marquee><img onclick='deleteItem(" + i + ")' src=\"https://static.thenounproject.com/png/236306-200.png\" class=\"del\"><img class='tick' src='https://image.flaticon.com/icons/png/512/60/60727.png' onclick='strike(" + i + ")' style='position: relative;height: 23px;bottom: 60px;filter:invert(1);left:10px;'></div><br>";
+                document.querySelector(".todolist").innerHTML += "<li class='li1'><div class='title'>" + itemsTitles[i] + "</div><div class='time'>" + itemsTime[i] + "</div><br><marquee class='desc'>" + itemsDesc[i] + "</marquee><img onclick='deleteItem(" + i + ")' src=\"https://static.thenounproject.com/png/236306-200.png\" class=\"del\"><img class='tick' src='https://image.flaticon.com/icons/png/512/60/60727.png' onclick='strike(" + i + ")' style='position: relative;height: 23px;bottom: 60px;filter:invert(1);left:10px;'></li><br>";
             }
         }//forms the list item by basic html and designed using CSS above.
 
