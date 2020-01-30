@@ -525,7 +525,12 @@
         function closeForm() {
             document.querySelector(".form").style.transform = 'translateY(-100%)';
         }//Close the form or take the form out of sight in case the user might have opened the form by mistake or does not want to add a new item.
-    </script>
+    setInterval(()=>{
+    var width=window.innerWidth;
+    if(width>700)
+    alert("You're recommended to use Calculator Web on a mobile device or in portrait mode, please.");
+},1000);
+</script>
     <a style="display:none" href="/">Not allowed</a>
     <!--robots.txt-->
 </body>
